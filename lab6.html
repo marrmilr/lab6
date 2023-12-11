@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>laba6</title>
+</head>
+<body>
+<script>
+function Car(carName, carYear, carValue){
+  this.name = carName;
+  this.year = carYear;
+  this.value = carValue;
+  this.GetInfoCar = function(){
+    document.write(`${this.name} ${this.year} ${this.value} <br>`)
+  }
+}
+
+function User(userName, userSurname, userYear){
+  this.name = userName;
+  this.year = userYear;
+  this.surname = userSurname;
+  this.GetInfoUser = function(){
+    document.write(`${this.name} ${this.year} ${this.surname} <br>`)
+  }
+}
+
+function Book(bookName, bookYear, bookAuthor){
+  this.name = bookName;
+  this.year = bookYear;
+  this.author = bookAuthor;
+  this.GetInfoBook = function(){
+    document.write(`${this.name} ${this.year} ${this.author} <br>`)
+  }
+}
+
+function GetInfo(){
+  this.display = function(Car, User, Book){
+    document.write(`${User.name} читает книгу ${Book.name} про машину ${Car.name}`)
+  }
+}
+
+var bmw = new Car('BMW', 2011, '1.3');
+bmw.GetInfoCar();
+var user = new User('Анжела', 'Лузина', 2004);
+user.GetInfoUser();
+var book = new Book('бмв', 2017, 'сергей');
+book.GetInfoBook();
+var disp = new GetInfo();
+disp.display(bmw, user, book);
+    </script>
+</body>
+</html>
